@@ -21,6 +21,8 @@ Installation
 Usage
 =====
 
+Get the most recent series.
+
 ::
 
    $ python
@@ -36,6 +38,8 @@ Usage
    >>> p.girls[0].name
    'キュアハート'
 
+Get from slug.
+
 ::
 
    $ python
@@ -46,6 +50,8 @@ Usage
    >>> p.girls[2].name
    >>> p.girls[2].transform()
    ピカピカピカリンジャンケンポン！ キュアピース！
+
+Precure girls of the first series require her partner to transform.
 
 ::
 
