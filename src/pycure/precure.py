@@ -27,8 +27,8 @@ class PrecureDict(OrderedDict):
 
 
 class Series(object):
-    title = ""
-    slug = ""
+    title = ''
+    slug = ''
     broadcast_from = None
     broadcast_to = None
     now = False

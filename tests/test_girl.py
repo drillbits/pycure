@@ -16,22 +16,22 @@ class TestGirlName(unittest.TestCase):
 
     def test_before_transform(self):
         girl = self._getTarget(
-            "ねじめじろう",
-            "ネジキュア",
-            "はい")
+            'ねじめじろう',
+            'ネジキュア',
+            'はい')
         name = self._callFUT(girl)
 
-        compare(name, "ねじめじろう")
+        compare(name, 'ねじめじろう')
 
     def test_after_transform(self):
         girl = self._getTarget(
-            "ねじめじろう",
-            "ネジキュア",
-            "はい")
+            'ねじめじろう',
+            'ネジキュア',
+            'はい')
         girl._transformed = True
         name = self._callFUT(girl)
 
-        compare(name, "ネジキュア")
+        compare(name, 'ネジキュア')
 
 
 class TestGirlTransform(unittest.TestCase):
@@ -44,22 +44,22 @@ class TestGirlTransform(unittest.TestCase):
 
     def test_stdout(self):
         girl = self._getTarget(
-            "ねじめじろう",
-            "ネジキュア",
-            "はい")
+            'ねじめじろう',
+            'ネジキュア',
+            'はい')
         with OutputCapture() as output:
             self._callFUT(girl, True)
 
-        output.compare("はい")
+        output.compare('はい')
 
     def test_not_stdout(self):
         girl = self._getTarget(
-            "ねじめじろう",
-            "ネジキュア",
-            "はい")
+            'ねじめじろう',
+            'ネジキュア',
+            'はい')
         result = self._callFUT(girl, False)
 
-        compare(result, "はい")
+        compare(result, 'はい')
 
 
 class TestFirstGirlTransform(unittest.TestCase):
@@ -72,27 +72,27 @@ class TestFirstGirlTransform(unittest.TestCase):
 
     def test_has_partner(self):
         girl1 = self._getTarget(
-            "ねじめ",
-            "キュアドリル",
-            "はい")
+            'ねじめ',
+            'キュアドリル',
+            'はい')
         girl2 = self._getTarget(
-            "じろう",
-            "キュアビッツ",
-            "はいじゃないが")
+            'じろう',
+            'キュアビッツ',
+            'はいじゃないが')
         girl1.partner = girl2
         girl2.partner = girl1
         girl1.transform_with = Mock()
-        self._callFUT(girl1, "じろう", False)
+        self._callFUT(girl1, 'じろう', False)
 
         compare(girl1.transform_with.call_count, 1)
 
     def test_no_partner(self):
         girl1 = self._getTarget(
-            "ねじめ",
-            "キュアドリル",
-            "はい")
+            'ねじめ',
+            'キュアドリル',
+            'はい')
         girl1.transform_with = Mock()
-        self._callFUT(girl1, "じろう", False)
+        self._callFUT(girl1, 'じろう', False)
 
         compare(girl1.transform_with.call_count, 0)
 
@@ -107,30 +107,30 @@ class TestFirstGirlTransformWith(unittest.TestCase):
 
     def test_transform(self):
         girl1 = self._getTarget(
-            "ねじめ",
-            "キュアドリル",
-            "はい")
+            'ねじめ',
+            'キュアドリル',
+            'はい')
         girl2 = self._getTarget(
-            "じろう",
-            "キュアビッツ",
-            "はいじゃないが")
+            'じろう',
+            'キュアビッツ',
+            'はいじゃないが')
         girl1.partner = girl2
         girl2.partner = girl1
-        result = self._callFUT(girl1, "じろう", False)
+        result = self._callFUT(girl1, 'じろう', False)
 
-        compare(result, "はい")
+        compare(result, 'はい')
 
     def test_invalid_partner(self):
         girl1 = self._getTarget(
-            "ねじめ",
-            "キュアドリル",
-            "はい")
+            'ねじめ',
+            'キュアドリル',
+            'はい')
         girl2 = self._getTarget(
-            "じろう",
-            "キュアビッツ",
-            "はいじゃないが")
+            'じろう',
+            'キュアビッツ',
+            'はいじゃないが')
         girl1.partner = girl2
         girl2.partner = girl1
         from pycure.girl import PartnerInvalidError
         with ShouldRaise(PartnerInvalidError):
-            self._callFUT(girl1, "しろう", False)
+            self._callFUT(girl1, 'しろう', False)

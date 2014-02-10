@@ -1,7 +1,9 @@
 # coding: utf-8
+
+
 class Girl(object):
-    _name = ""
-    _precure_name = ""
+    _name = ''
+    _precure_name = ''
     _transformed = False
     prologue = None
 
@@ -11,7 +13,7 @@ class Girl(object):
         self.prologue = prologue
 
     def __str__(self):
-        return "{name}({precure_name})".format(
+        return '{name}({precure_name})'.format(
             name=self._name,
             precure_name=self._precure_name)
 
