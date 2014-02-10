@@ -14,7 +14,7 @@ def _get_version(*path):
     except Exception:
         return '0.0.0'
 
-version = _get_version('src', 'nhk', '__init__.py')
+version = _get_version('src', 'pycure', '__init__.py')
 
 
 def _read(name):

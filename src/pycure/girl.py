@@ -37,15 +37,15 @@ class PartnerInvalidError(Exception):
 class FirstGirl(Girl):
     partner = None
 
-    def transform(self, partner_name=None):
+    def transform(self, partner_name=None, stdout=True):
         if self.partner:
-            return self.transform_with(partner_name)
+            return self.transform_with(partner_name, stdout)
         else:
-            return super().transform()
+            return super().transform(stdout)
 
-    def transform_with(self, partner_name):
+    def transform_with(self, partner_name, stdout=True):
         if partner_name == self.partner._name:
             self.partner._transformed = True
-            return super().transform()
+            return super().transform(stdout)
         else:
-            raise PartnerInvalidError
+            raise PartnerInvalidError()

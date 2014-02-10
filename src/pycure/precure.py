@@ -6,7 +6,7 @@ class PrecureDict(OrderedDict):
     def add(self, slug, title, broadcast_from, broadcast_to, now=False):
         if slug in self:
             raise KeyError
-        if self.now:
+        if now and self.now:
             raise ValueError
         self[slug] = Series(slug, title, broadcast_from, broadcast_to, now)
 
