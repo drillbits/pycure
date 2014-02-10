@@ -8,3 +8,5 @@ dist/*
 src/*.egg-info/*
 /build
 /dist
+
+env

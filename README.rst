@@ -48,6 +48,7 @@ Get from slug.
    ['', 'maxheart', 'splashstar', 'yes', 'gogo', 'fresh', 'heartcatch', 'suite', 'smile', 'dokidoki']
    >>> p = Precure["smile"]
    >>> p.girls[2].name
+   '黄瀬やよい'
    >>> p.girls[2].transform()
    ピカピカピカリンジャンケンポン！ キュアピース！
 

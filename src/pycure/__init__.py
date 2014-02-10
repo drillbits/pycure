@@ -2,6 +2,8 @@
 from . import girl, precure
 from datetime import date
 
+__version__ = '0.0.2'
+
 Precure = precure.PrecureDict()
 Precure.add("",
             "ふたりはプリキュア",
@@ -42,6 +44,10 @@ Precure.add("smile",
 Precure.add("dokidoki",
             "ドキドキ！プリキュア",
             date(2013, 2, 3),
+            date(2014, 1, 26))
+Precure.add("happinesscharge",
+            "ハピネスチャージプリキュア！",
+            date(2014, 2, 2),
             None,
             True)
 
@@ -217,4 +223,13 @@ Precure["dokidoki"].girls = [
         "愛の切り札！ キュアエース！\n"
         "美しさは正義の証し、ウインク一つで、"
         "あなたのハートを射抜いて差し上げますわ"),
+]
+
+Precure["happinesscharge"].girls = [
+    girl.Girl(
+        "愛乃めぐみ", "キュアラブリー",
+        "世界に広がるビッグな愛！ キュアラブリー！"),
+    girl.Girl(
+        "白雪ひめ", "キュアプリンセス",
+        "天空に舞う蒼き風！ キュアプリンセス！"),
 ]
