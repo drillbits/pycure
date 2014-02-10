@@ -2,6 +2,9 @@
 pycure
 ======
 
+.. image:: https://drone.io/github.com/drillbits/pycure/status.png
+   :target: https://drone.io/github.com/drillbits/pycure/latest
+
 All about Japanese battle heroine "Pretty Cure".
 
 Inspired by Acme::PrettyCure.
